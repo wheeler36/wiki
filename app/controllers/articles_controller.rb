@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_action :find_article, only: [:show, :edit, :destroy]
 
   def index
+    @articles = Article.all.order("Created_at DESC")
   end
 
   def show
